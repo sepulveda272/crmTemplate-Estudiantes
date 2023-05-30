@@ -1,9 +1,9 @@
 
 <?php
 
-require_once("config.php");
+require_once("Estudiante.php");
 
-$data = new Config();
+$data = new Estudiante();
 
 $all = $data-> obtainAll();
 
@@ -99,7 +99,7 @@ $all = $data-> obtainAll();
 
             <tr>
               <td class=""><?php echo $val['id']?></td>
-              <td><img class="imagenE" src="images/<?php echo $val['imagen']?>" alt="nada"></td>
+              <td><img class="tablaImg" src="images/<?php echo $val['imagen']?>" alt="nada"></td>
               <td><?php echo $val['nombre']?></td>
               <td><?php echo $val['direccion']?></td>
               <td><?php echo $val['logros']?></td>

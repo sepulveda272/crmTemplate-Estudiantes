@@ -14,10 +14,10 @@ CREATE TABLE campers(
 );
 
 CREATE TABLE users(
-    id PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     IDCamper INT NOT NULL,
-    email VARCHAR (80)NOT NULL,
+    email VARCHAR (80) NOT NULL,
     username VARCHAR (80) NOT NULL,
     password VARCHAR (60) NOT NULL,
     FOREIGN KEY (IDCamper) REFERENCES campers (id)
-    )
+    );
