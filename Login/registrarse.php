@@ -11,10 +11,19 @@ if (isset($_POST['registrarse'])){
     $registrar->setUsername($_POST['username']);
     $registrar->setPassword($_POST['password']);
 
+    /* $registrar->insertData();
+
+    echo "<script>alert('Los datos fueron guardados satisfactoriamente');document.location='../Home/home.php'</script>";
+ */
+
+
+ if($registrar>checkUser($_POST['email'])){
+    echo "<script>alert('Usuario ya existe');document.location='loginRegister.php'</script>";
+ }else{
     $registrar->insertData();
+    echo "<script>alert('Los datos fueron guardados satisfactoriamente');document.location='../Home/home.php'</script>";
 
-    echo "<script>alert('Los datos fueron guardados satisfactoriamente');document.location='loginRegister.php'</script>";
-
+ }
 }
 
 ?>

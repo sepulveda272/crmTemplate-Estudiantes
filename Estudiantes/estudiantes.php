@@ -40,7 +40,7 @@ $all = $data-> obtainAll();
         <h3>Juan Sepulveda</h3>
       </div>
       <div class="menus">
-        <a href="/Home/home.php" style="display: flex;gap:2px;">
+        <a href="../Home/home.php" style="display: flex;gap:2px;">
           <i class="bi bi-house-door"> </i>
           <h3 style="margin: 0px;">Home</h3>
         </a>
@@ -48,11 +48,7 @@ $all = $data-> obtainAll();
           <i class="bi bi-people"></i>
           <h3 style="margin: 0px;font-weight: 800;">Estudiantes</h3>
         </a>
-        <a href="/Home/home.php" style="display: flex;gap:2px;">
-        <i class="bi bi-cart-check"></i>
-          <h3 style="margin: 0px;">Factura</h3>
-        </a>
-       
+        
 
 
       </div>
