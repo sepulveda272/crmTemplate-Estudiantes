@@ -1,18 +1,25 @@
 <?php
+
+ini_set("display_errors", 1);
+
+ini_set("display_startup_errors", 1);
+
+error_reporting(E_ALL);
+
     require_once('../Config/db.php');
     require_once('../Config/conectar.php');
     require_once('LoginUser.php');
 
     class RegistroUser extends Conectar{
         private $id;
-        private $idCamper;
+        private $IDCamper;
         private $email;
         private $username;
         private $password;
 
-        public function __construct($id=0, $idCamper='', $email='', $username='',$password='',$dbCnx=''){
+        public function __construct($id=0, $IDCamper='', $email='', $username='',$password='',$dbCnx=''){
             $this -> id = $id;
-            $this -> idCamper = $idCamper;
+            $this -> IDCamper = $IDCamper;
             $this -> email = $email;
             $this -> username = $username;
             $this -> password = $password;
@@ -27,12 +34,12 @@
             return $this->id;
         }
 
-        public function setIdCamper($idCamper){
-            $this->idCamper = $idCamper;
+        public function setIdCamper($IDCamper){
+            $this->IDCamper = $IDCamper;
         }
 
         public function getIdCamper(){
-            return $this->idCamper;
+            return $this->IDCamper;
         }
 
         public function setEmail($email){
@@ -76,7 +83,7 @@
         public function insertData(){
             try {
                 $stm = $this-> dbCnx -> prepare("INSERT INTO users ( IDCamper, email, username, password) values(?,?,?,?)");
-                $stm -> execute([$this->idCamper, $this->email, $this->username, md5($this->password)]);
+                $stm -> execute([$this->IDCamper, $this->email, $this->username, md5($this->password)]);
 
                 $login = new LoginUser();
 
